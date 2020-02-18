@@ -13,6 +13,6 @@ export default class Precio {
         const enterosFormateados = enteros.length <= 3 ? enteros.join('') : enteros.reverse().map((e, i) => (i + 1) % 3 == 0 ? `,${e}` : e).reverse().join('');
 
         const decimales = valorString.includes('.') ? valorString.split('.')[1][0] + valorString.split('.')[1][1] : [0, 0];
-        return `${enterosFormateados}.${decimales}`;
+        return `$${enterosFormateados}.${decimales}`;
     }
 }
