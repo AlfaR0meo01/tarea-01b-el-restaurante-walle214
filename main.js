@@ -4,6 +4,7 @@ import Fecha from './modulos/Fecha.js';
 import Direccion from './modulos/Direccion.js';
 import Cliente from './modulos/Cliente.js';
 import Producto from './modulos/Producto.js';
+import ElementoPedido from './modulos/ElementoPedido.js';
 
 const tiempo = new Tiempo(9, 35, 'pm');
 const precio = new Precio(256.1);
@@ -12,6 +13,9 @@ const ulisesDireccion = new Direccion('Belisario Dominguez', '39A', undefined, '
 const ulisesCliente = new Cliente('Ulises Ramirez', ulisesDireccion, 3123398831);
 const producto1 = new Producto('Pizza grande mexicana', precio);
 const producto2 = new Producto('Orden grande de sopes', new Precio(65.20));
+const elementoPedido1 = new ElementoPedido(producto1, 5);
+const elementoPedido2 = new ElementoPedido(producto2, 3);
+
 
 const probarTiempo = _ =>
     console.log(
@@ -49,3 +53,6 @@ probarPrecio();
 
 const probarProducto = _ => console.log(producto1.getDescripcion());
 probarProducto();
+
+const probarElementoPedido = _ => console.log(elementoPedido1.getDescripcion());
+probarElementoPedido();
