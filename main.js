@@ -5,7 +5,7 @@ import Direccion from './modulos/Direccion.js';
 import Cliente from './modulos/Cliente.js';
 
 const tiempo = new Tiempo(9, 35, 'pm');
-const precio = new Precio(62562543.016);
+const precio = new Precio(25625443.1);
 const ulisesFechaNacimiento = new Fecha(24, 9, 2000);
 const ulisesDireccion = new Direccion('Belisario Dominguez', '39A', undefined, 'Obrera', 28510, 'Queseria', 'Cuahutemoc');
 const ulisesCliente = new Cliente('Ulises Ramirez', ulisesDireccion, 3123398831);
@@ -16,10 +16,6 @@ const probarTiempo = _ =>
         tiempo.getFormato24());
 
 probarTiempo();
-const probarPrecio = _ =>
-    console.log(precio.getPrecio());
-
-probarPrecio();
 
 const probarFecha = _ =>
     console.log(
@@ -38,3 +34,8 @@ probarDireccion();
 
 const probarCliente = _ => console.log(ulisesCliente.getPerfil());
 probarCliente();
+
+const probarPrecio = _ =>
+    console.log(precio.getPrecio());
+
+probarPrecio();

@@ -8,11 +8,10 @@ export default class Precio {
     }
     getPrecio = _ => {
         const valorString = this.valor.toString();
-        const enteros = valorString.includes('.') ? valorString.split('.')[0].split('') : valorString.split('');
-
-        const enterosFormateados = enteros.length <= 3 ? enteros.join('') : enteros.reverse().map((e, i) => (i + 1) % 3 == 0 ? `,${e}` : e).reverse().join('');
-
-        const decimales = valorString.includes('.') ? valorString.split('.')[1][0] + valorString.split('.')[1][1] : [0, 0];
+        const enteros = valorString.split('.')[0].split('');
+        const enterosFormateados = enteros.length <= 3 ? enteros.join('') : enteros.reverse().map((e, i) => (i + 1) % 3 == 0 && i != enteros.length - 1 ? `,${e}` : e).reverse().join('');
+        const intermedio = (valorString.split('.')[1] || '').split('');
+        const decimales = `${intermedio[0] || 0}${intermedio[1] || 0}`;
         return `$${enterosFormateados}.${decimales}`;
     }
 }

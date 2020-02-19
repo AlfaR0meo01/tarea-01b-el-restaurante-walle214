@@ -57,8 +57,8 @@ La mayoría de los detalles de las clases para su implementación se pueden obte
 
 - Métodos
   - getResumen(). Regresa un resumen del pedido en el siguiente formato: 5/Feb/2020 5:20 pm - 3 elementos con 5 productos -  total: $1,453.00
-  - getNumeroElementos(). Regresa el número de elementos que contiene el pedido
-  - getProductos(). Regresa el número de productos que contiene el pedido
+  - getNumeroElementos(). Regresa el número de elementos que contiene el pedido *Cuantos Productos Diferetes contiene el pedido [array.lenght]*
+  - getProductos(). Regresa el número de productos que contiene el pedido *Sumar la propiedad cantidad de cada producto [reduce]*
   - getCostoTotal(). Regresa el costo total del pedido
   - agregarElemento(). Agrega un elemento al pedido
   - listarElementos(). Imprime un listado de todos los elementos que contiene el pedido
