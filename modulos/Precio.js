@@ -6,6 +6,7 @@ export default class Precio {
     constructor(valor) {
         this.valor = valor;
     }
+    get precio() { return this.valor };
     getPrecio = _ => {
         const valorString = this.valor.toString();
         const enteros = valorString.split('.')[0].split('');
