@@ -19,5 +19,6 @@ export default class Direccion {
         this.municipio = municipio;
     }
     getFormatoCorto = _ => `${this.calle} ${this.numeroExterior}`;
-    getFormatoLargo = _ => `${this.calle} ${this.numeroExterior}\nNumero interior: ${this.numeroInterior}\nColonia ${this.colonia}\n${this.ciudad},${this.municipio} ${this.codigoPostal}`;
+    getFormatoLargo = _ =>
+        `${this.calle} ${this.numeroExterior}\nNumero interior: ${this.numeroInterior}\nColonia ${this.colonia}\n${this.ciudad},${this.municipio} ${this.codigoPostal}`;
 }
