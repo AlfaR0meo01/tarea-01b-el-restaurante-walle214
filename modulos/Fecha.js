@@ -8,15 +8,15 @@ export default class Fecha {
     constructor(dia, mes, annio) {
         this.fecha = new Date(annio, mes, dia);
     }
-    getMsecTrascurridos = _ => Date.now() - this.fecha;
+    formatearMsecs = (dividendo) => Math.trunc((Date.now() - this.fecha) / dividendo);
 
-    getAnnios = _ => Math.trunc(this.getMsecTrascurridos() / 31557600000);
+    getAnnios = _ => this.formatearMsecs(31557600000);
 
-    getMeses = _ => Math.trunc(this.getMsecTrascurridos() / 2629800000);
+    getMeses = _ => this.formatearMsecs(2629800000);
 
-    getSemanas = _ => Math.trunc(this.getMsecTrascurridos() / 604800000);
+    getSemanas = _ => this.formatearMsecs(604800000);
 
-    getDias = _ => Math.trunc(this.getMsecTrascurridos() / 86400000);
+    getDias = _ => this.formatearMsecs(86400000);
 
     getFecha = _ => {
         const meses = ['En', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Agto', 'Sept', 'Oct', 'Nov', 'Dic'];
