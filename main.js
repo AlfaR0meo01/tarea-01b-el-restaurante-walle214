@@ -6,6 +6,7 @@ import Cliente from './modulos/Cliente.js';
 import Producto from './modulos/Producto.js';
 import ElementoPedido from './modulos/ElementoPedido.js';
 import Pedido from './modulos/Pedido.js';
+import Restaurante from './modulos/Restaurante.js';
 
 const tiempo = new Tiempo(9, 35, 'pm');
 
@@ -14,8 +15,8 @@ const precio = new Precio(256.1);
 const ulisesFechaNacimiento = new Fecha(24, 9, 2000);
 const fechaEntrega = new Fecha(4, 1, 2020);
 
-const ulisesDireccion = new Direccion('Belisario Dominguez', '39A', undefined, 'Obrera', 
-28510, 'Queseria', 'Cuahutemoc');
+const ulisesDireccion = new Direccion('Belisario Dominguez', '39A', undefined, 'Obrera',
+    28510, 'Queseria', 'Cuahutemoc');
 
 const ulisesCliente = new Cliente('Ulises Ramirez', ulisesDireccion, 3123398831);
 
@@ -25,7 +26,9 @@ const producto2 = new Producto('Orden grande de sopes', new Precio(65.20));
 const elementoPedido1 = new ElementoPedido(producto1, 5);
 const elementoPedido2 = new ElementoPedido(producto2, 3);
 
-const pedido1  = new Pedido(fechaEntrega,tiempo,ulisesCliente);
+const pedido1 = new Pedido(fechaEntrega, tiempo, ulisesCliente);
+
+const restaurante1 = new Restaurante('Antojos doña toña', 3152641, ulisesDireccion);
 
 const probarTiempo = _ =>
     console.log(
@@ -74,3 +77,13 @@ const probarPedido = _ => {
     pedido1.listarElementos();
 }
 probarPedido();
+
+const probarRestaurante = _ => {
+    restaurante1.registrarProducto(producto1);
+    restaurante1.registrarProducto(producto2);
+    restaurante1.registrarPedido(pedido1);
+
+    restaurante1.listarProductos();
+    restaurante1.listarPedidos();
+}
+probarRestaurante();
